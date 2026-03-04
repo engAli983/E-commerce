@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store</title>
+    <link rel="icon" href="img/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    <div class="cart">
+      <div class="top-cart">
+        <h3>Cart Items <span class="count-item-cart">0</span></h3>
+        <span class="close-cart"
+          ><i class="fa-regular fa-circle-xmark"></i
+        ></span>
+      </div>
+
+      <div class="items-in-cart" id="cart-items"></div>
+
+      <div class="bottom-cart">
+        <div class="total">
+          <p>subtotal</p>
+          <p class="price-cart-total">$0</p>
+        </div>
+        <div class="button-cart">
+          <a href="#" class="btn-cart btn">Checkout</a>
+          <span class="btn-cart trans-bg btn shop-more">Shop More</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Favourite Sidebar -->
+    <div class="favourite">
+      <div class="top-favourite">
+        <h3>My Wishlist <span class="count-item-fav">0</span></h3>
+        <span class="close-favourite"
+          ><i class="fa-regular fa-circle-xmark"></i
+        ></span>
+      </div>
+
+      <div class="items-in-fav" id="fav-items"></div>
+
+      <div class="bottom-favourite">
+        <span class="btn-fav-shop btn">
+          <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+        </span>
+      </div>
+    </div>
+    <!-- End Favourite Sidebar -->
+
+    <!-- Start Header -->
+    <header>
+      <!-- Start Top Header -->
+      <div class="top-header">
+        <div class="container">
+          <a href="#" class="logo"><img src="img/logo-2.png" alt="" /></a>
+
+          <form class="search-box">
+            <div class="select-box">
+              <select id="category" name="category">
+                <option value="All Categories">All Categories</option>
+                <option value="Electronics &amp; Digital">
+                  Electronics &amp; Digital
+                </option>
+                <option value="Phones &amp; Tablet">Phones &amp; Tablet</option>
+                <option value="Fashion &amp; Clothings">Fashion &amp; Clothings</option>
+                <option value="Television &amp; Monitor">
+                  Television &amp; Monitor
+                </option>
+                <option value="Jewelry &amp; Watches">Jewelry &amp; Watches</option>
+                <option value="Washing Machine">Washing Machine</option>
+                <option value="Toys &amp; Hobbies">Toys &amp; Hobbies</option>
+              </select>
+            </div>
+
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search All Products"
+              required
+            />
+
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+
+          <div class="header-icons">
+            <div class="icon open-favourite">
+              <a href="#"><i class="fa-regular fa-heart"></i></a>
+              <span class="count count_favourite">0</span>
+            </div>
+            <div class="icon open-cart">
+              <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              <span class="count count_item_header">0</span>
+            </div>
+            <button class="menu-toggle">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- End Top Header -->
+
+      <!-- Start Bottom Header -->
+      <div class="bottom-header">
+        <div class="container">
+          <nav class="nav">
+            <div class="category-nav">
+              <div class="category-btn">
+                <i class="fa-solid fa-list"></i>
+                <p>Browse Category</p>
+                <i class="fa-solid fa-angle-down angle-icon"></i>
+              </div>
+              <div class="category-nav-list">
+                <a href="#">Top 10 Offers</a>
+                <a href="#">Electronics & Digital</a>
+                <a href="#">Phones & Tablet</a>
+                <a href="#">Fashion & Clothings</a>
+                <a href="#">Television & Monitor</a>
+                <a href="#">Jewelry & Watches</a>
+                <a href="#">Toys & Hobbies</a>
+              </div>
+            </div>
+            <ul class="nav-links">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Accessories</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="login-signup btns">
+            <a href="#" class="btn">
+              Login <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            </a>
+            <a href="#" class="btn">
+              Sign Up
+              <i class="fa-solid fa-user-plus"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- End Bottom Header -->
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Slider Section -->
+    <div class="slider">
+      <div class="container">
+        <div class="slide-swap mySwiper swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#"><img src="img/banner_home1.png" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#"><img src="img/banner_home2.png" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#"><img src="img/banner_home4.png" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#"><img src="img/banner_home5.png" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#"><img src="img/banner_home6.png" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#"><img src="img/banner_home7.png" alt="" /></a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="banner-3">
+          <a href="#"><img src="img/banner_home3.png" alt="" /></a>
+        </div>
+      </div>
+    </div>
+    <!-- End Slider Section -->
+
+    <!-- Start Promo Features -->
+    <div class="promo-features">
+      <div class="container">
+        <div class="box">
+          <a href="#" class="link-btn"></a>
+          <img src="img/banner3_1.png" alt="" />
+          <div class="text">
+            <h5>Dark Disc</h5>
+            <h5>dealse on this</h5>
+            <div class="sale">
+              <p>Up</p>
+              <span>70%</span>
+            </div>
+            <h6>Shop Now</h6>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="link-btn"></a>
+          <img src="img/banner3_2.png" alt="" />
+          <div class="text">
+            <h5>Dark Disc</h5>
+            <h5>dealse on this</h5>
+            <div class="sale">
+              <p>Up</p>
+              <span>70%</span>
+            </div>
+            <h6>Shop Now</h6>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="link-btn"></a>
+          <img src="img/banner3_3.png" alt="" />
+          <div class="text">
+            <h5>Dark Disc</h5>
+            <h5>dealse on this</h5>
+            <div class="sale">
+              <p>Up</p>
+              <span>70%</span>
+            </div>
+            <h6>Shop Now</h6>
+          </div>
+        </div>
+
+        <div class="box">
+          <a href="#" class="link-btn"></a>
+          <img src="img/banner3_4.png" alt="" />
+          <div class="text">
+            <h5>Dark Disc</h5>
+            <h5>dealse on this</h5>
+            <div class="sale">
+              <p>Up</p>
+              <span>70%</span>
+            </div>
+            <h6>Shop Now</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Promo Features -->
+
+    <!-- Start Slider Products -->
+    <div class="slider-products">
+      <div class="container">
+        <div class="slide-product mySwiper swiper">
+          <div class="top-slide">
+            <h2><i class="fa-solid fa-tags"></i>Hot Deals</h2>
+          </div>
+
+          <div class="products swiper-wrapper" id="swiper-items-sale"></div>
+
+          <div class="btns-swip">
+            <div class="btn-swip btn-swip-prev">
+              <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div class="btn-swip btn-swip-next">
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Start Slider Products -->
+
+    <!-- Start Banners 1 -->
+    <div class="banners">
+      <div class="container">
+        <div class="banners-boxs">
+          <a href="#" class="box"><img src="img/banner_box4.jpg" alt="" /></a>
+          <a href="#" class="box"><img src="img/banner_box5.jpg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+    <!-- Start Banners 1 -->
+
+    <!-- Start Slider Proudects -->
+    <div class="slider-products">
+      <div class="container">
+        <div class="slide-product mySwiper swiper">
+          <div class="top-slide">
+            <h2><i class="fa-solid fa-tags"></i>Electronics</h2>
+          </div>
+
+          <div class="products swiper-wrapper" id="swiper-electronic"></div>
+
+          <div class="btns-swip">
+            <div class="btn-swip btn-swip-prev">
+              <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div class="btn-swip btn-swip-next">
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Slider Proudects -->
+
+    <!-- Start Slider Proudects -->
+    <div class="slider-products">
+      <div class="container">
+        <div class="slide-product mySwiper swiper">
+          <div class="top-slide">
+            <h2><i class="fa-solid fa-tags"></i>Appliances</h2>
+          </div>
+
+          <div class="products swiper-wrapper" id="swiper-appliances"></div>
+
+          <div class="btns-swip">
+            <div class="btn-swip btn-swip-prev">
+              <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div class="btn-swip btn-swip-next">
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Slider Proudects -->
+
+    <!-- Start Banners 2 -->
+    <div class="banners-2">
+      <div class="container">
+        <div class="banners-boxs">
+          <a href="#" class="box"><img src="img/banner_box1.jpg" alt="" /></a>
+          <a href="#" class="box"><img src="img/banner_box2.jpg" alt="" /></a>
+          <a href="#" class="box"><img src="img/banner_box3.jpg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+    <!-- End Banners 2 -->
+
+    <!-- Start Slider Proudects -->
+    <div class="slider-products">
+      <div class="container">
+        <div class="slide-product mySwiper swiper">
+          <div class="top-slide">
+            <h2><i class="fa-solid fa-tags"></i>Mobiles</h2>
+          </div>
+
+          <div class="products swiper-wrapper" id="swiper-mobile"></div>
+
+          <div class="btns-swip">
+            <div class="btn-swip btn-swip-prev">
+              <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div class="btn-swip btn-swip-next">
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Slider Proudects -->
+
+    <button class="scroll-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Start Footer -->
+    <footer>
+      <div class="container">
+        <div class="box">
+          <div class="logo">
+            <a href="#"><img src="img/logo-2.png" alt="" /></a>
+          </div>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, nulla
+            enim quidem corporissint eligendi laboriosam. Officiis vel, totam
+            omnis
+          </p>
+          <ul class="social">
+            <li>
+              <a
+                href="https://www.facebook.com/profile.php?id=100089121596450"
+                target="_blank"
+                class="facebook"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/" target="_blank" class="twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                class="youtube"
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>Find It Fast</h2>
+          <ul class="links">
+            <li><a href="#">Laptops & Computers</a></li>
+            <li><a href="#">Smart Phones & Tablets</a></li>
+            <li><a href="#">TV & Audio</a></li>
+            <li><a href="#">Appliances</a></li>
+            <li><a href="#">Jewelry & Watches</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>Quick Links</h2>
+          <ul class="links">
+            <li><a href="#">Your Account</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Estimated Delivery Time</a></li>
+            <li><a href="#">Purchase History</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>Service Us</h2>
+          <ul class="links">
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">Term & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">FAQS</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-footer">
+        <div class="container">
+          <p>&copy;2025 <span>Ali Store.</span> All Rights Reserved</p>
+          <div class="payment-image">
+            <img src="img/payment_method.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/items-home.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/swiper.js"></script>
+  </body>
+</html>
